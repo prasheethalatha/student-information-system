@@ -1,0 +1,122 @@
+package stdinfo;
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
+
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
+import javafx.scene.text.*;
+
+import javafx.stage.Stage;
+
+/**
+*
+* @author Admin
+*/
+public class Stdinfo extends Application {
+
+@Override
+public void start(Stage primaryStage) {
+primaryStage.setTitle(&quot;Student Information System&quot;);
+GridPane gp=new GridPane();
+Text text=new Text(&quot;CREATE&quot;);
+text.setFont(Font.font(&quot;Arial&quot;,FontWeight.BOLD,36));
+Label l1=new Label(&quot;First Name&quot;);
+l1.setFont((new Font(&quot;Arial&quot;,24)));
+Label l2=new Label(&quot;Last Name&quot;);
+l2.setFont((new Font(&quot;Arial&quot;,24)));
+Label l3=new Label(&quot;Gender&quot;);
+l3.setFont((new Font(&quot;Arial&quot;,24)));
+Label l4=new Label(&quot;Date Of birth&quot;);
+l4.setFont((new Font(&quot;Arial&quot;,24)));
+Label l5=new Label(&quot;Course&quot;);
+
+l5.setFont((new Font(&quot;Arial&quot;,24)));
+Label l6=new Label(&quot;Year&quot;);
+l6.setFont((new Font(&quot;Arial&quot;,24)));
+Label l7=new Label(&quot;Semester&quot;);
+l7.setFont((new Font(&quot;Arial&quot;,24)));
+Label l8=new Label(&quot;Register Number&quot;);
+l8.setFont((new Font(&quot;Arial&quot;,24)));
+TextField t1=new TextField();
+TextField t2=new TextField();
+TextField t3=new TextField();
+Button b1;
+b1 = new Button(&quot;SAVE&quot;);
+RadioButton rb1=new RadioButton(&quot;Male&quot;);
+rb1.setFont((new Font(&quot;Arial&quot;,24)));
+RadioButton rb2=new RadioButton(&quot;Female&quot;);
+rb2.setFont((new Font(&quot;Arial&quot;,24)));
+RadioButton rb3=new RadioButton(&quot;Others&quot;);
+rb3.setFont((new Font(&quot;Arial&quot;,24)));
+ToggleGroup tg1=new ToggleGroup();
+rb1.setToggleGroup(tg1);
+rb2.setToggleGroup(tg1);
+ChoiceBox c1=new ChoiceBox();
+ChoiceBox c2=new ChoiceBox();
+ChoiceBox c3=new ChoiceBox();
+c1.getItems().add(&quot;CSE&quot;);
+c1.getItems().add(&quot;IT&quot;);
+c1.getItems().add(&quot;EEE&quot;);
+c1.getItems().add(&quot;ECE&quot;);
+c1.getItems().add(&quot;Civil&quot;);
+
+c1.getItems().add(&quot;Mechanical&quot;);
+c1.getItems().add(&quot;CSBS&quot;);
+c1.getItems().add(&quot;AI&quot;);
+for(int i=1;i&lt;=4;i++)
+c2.getItems().add(&quot;Year&quot;+i);
+for(int i=1;i&lt;=8;i++)
+c3.getItems().add(&quot;Semester&quot;+i);
+TextField t4=new TextField();
+b1.setOnAction(e -&gt; {
+System.out.println(&quot;data has been saved !!&quot;);
+});
+
+gp.setPadding(new Insets(10, 10, 10, 10));
+
+//Setting the vertical and horizontal gaps between the columns
+gp.setVgap(5);
+gp.setHgap(5);
+
+//Setting the Grid alignment
+gp.setAlignment(Pos.CENTER);Scene scene=new Scene(gp,900,550);
+gp.add(text,2,0);
+gp.add(l1,0,2);
+gp.add(l2,0,3);
+gp.add(l3,0,4);
+gp.add(l4,0,5);
+gp.add(l5,0,6);
+gp.add(l6,0,7);
+gp.add(l7,0,8);
+gp.add(l8,0,9);
+
+gp.add(t1,2,2);
+gp.add(t2,2,3);
+gp.add(t4,2,5);
+gp.add(rb1,2,4);
+gp.add(rb2,3,4);
+gp.add(rb3,8,4);
+gp.add(c1,2,6);
+gp.add(c2,2,7);
+gp.add(c3,2,8);
+gp.add(t3, 2, 9);
+gp.add(b1,2,11);
+primaryStage.setScene(scene);
+primaryStage.show();
+}
+
+/**
+* @param args the command line arguments
+*/
+public static void main(String[] args) {
+launch(args);
+}
+
+}
